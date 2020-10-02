@@ -1,8 +1,33 @@
-execute pathogen#infect()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-snippets'
+Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-css'
+Plug 'morhetz/gruvbox'
+Plug 'yggdroot/indentline'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'scrooloose/nerdcommenter'
+Plug 'bling/vim-airline'
+Plug 'sheerun/vim-polyglot'
+Plug 'easymotion/vim-easymotion'
+Plug 'sbdchd/neoformat'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'stephpy/vim-yaml'
+Plug 'leafgarland/typescript-vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
+call plug#end()
 let NERDTreeShowHidden=1
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_events = ["InsertLeave", "TextChanged"]"
 colorscheme gruvbox
+set bg=dark
 set nu
 set t_Co=256
 autocmd VimEnter * NERDTree
@@ -166,28 +191,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 filetype plugin indent on
 filetype plugin on
 " nerd-commenter
-"" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
 
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
 
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-"nmap
-nmap <F8> :TagbarToggle<CR>
