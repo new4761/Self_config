@@ -20,11 +20,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'stephpy/vim-yaml'
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 call plug#end()
 let NERDTreeShowHidden=1
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save = 0  " enable AutoSave on Vim startup
 let g:auto_save_events = ["InsertLeave", "TextChanged"]"
 colorscheme gruvbox
 set bg=dark
@@ -191,5 +189,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 filetype plugin indent on
 filetype plugin on
 " nerd-commenter
-
 
